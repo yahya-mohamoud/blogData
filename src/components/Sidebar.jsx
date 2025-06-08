@@ -6,13 +6,15 @@ function Sidebar({loading, posts, error}) {
   return (
     <div className='sidebar'>
       <h1>Posts</h1>
+      <ul  className='post-list'>
       {posts && posts.map((post) => {
-        return <ul  className='post-list'>
+        return (
           <li key={post.id} className='post-item'>
             <NavLink to={`/posts/${post.id}`} className={({ isActive }) => isActive ? "active-link" : "post-link"}>{post.title}</NavLink>
           </li>
-        </ul>
+        )
       })}
+      </ul>
     </div>
   )
 }

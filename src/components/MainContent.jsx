@@ -14,7 +14,12 @@ function MainContent() {
     )
   } 
 
+
   const post = posts.find(p => p.id === Number(id))
+
+   if (!post) {
+    return <h2>Post not found</h2>
+  }
 
   return (
     <div className='post'>
